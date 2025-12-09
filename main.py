@@ -1,4 +1,4 @@
 from genlang.phonology import classify_phonemes
 
-word = "ḥasada"
+word = input("Enter word: ")
 print(classify_phonemes(word))

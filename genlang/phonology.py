@@ -51,8 +51,8 @@ PHONEME_GROUPS = {
 def classify_phonemes(word: str):
     results = {group: [] for group in PHONEME_GROUPS}
 
-    # IMPORTANT: multi-character phonemes like "kh", "gh", "ṭ", "ṣ"
-    # must be checked FIRST — Hebrew has digraphs.
+    # multi-character phonemes like "kh", "gh", "ṭ", "ṣ"
+    # must be checked first because Hebrew has digraphs.
     i = 0
     while i < len(word):
         # check for two-character phonemes first
@@ -69,3 +69,5 @@ def classify_phonemes(word: str):
                 results[group].append(phoneme)
 
     return {group: values for group, values in results.items() if values}
+
+
